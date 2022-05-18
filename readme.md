@@ -1,5 +1,7 @@
 # Tired Manhattan Twitter Bot and Image Generator
 
+[![Azure Static Web Apps CI/CD](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/azure-static-web-apps-green-dune-0713d970f.yml/badge.svg)](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/azure-static-web-apps-green-dune-0713d970f.yml)
+
 ![Tired Manhattan](image.png)
 
 This Twitter bot uses [ImageSharp](https://sixlabors.com) to generate
