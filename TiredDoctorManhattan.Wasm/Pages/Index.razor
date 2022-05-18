@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<form @onsubmit=GenerateImage>
+    <input type="text" @bind=textToRender />
+    <button type="submit" class="btn btn-primary">Generate</button>
+</form>
+
+<div>
+    @if (imageBytes is not null)
+    {
+        <img src="data:image/png;base64,@getImageBase64">
+    }
+    else
+    {
+        <img src="assets/background.png">
+    }
+</div>

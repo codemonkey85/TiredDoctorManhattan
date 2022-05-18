@@ -1,9 +1,3 @@
-using ProfanityFilter.Interfaces;
-using Tweetinvi;
-using Tweetinvi.Core.Models;
-using Tweetinvi.Models;
-using Tweetinvi.Parameters;
-
 namespace TiredDoctorManhattan;
 
 public class DrManhattanResponder : BackgroundService
@@ -33,10 +27,10 @@ public class DrManhattanResponder : BackgroundService
 
             stream.AddLanguageFilter(LanguageFilter.English);
             stream.AddTrack($"@{_user.ScreenName}", Received);
-            
+
             stream.StreamStarted += (_, _) => _logger.LogInformation("Starting Filtered Streaming for @{ScreenName} ({UserId})...", _user.ScreenName, _user.UserId);
             stream.StreamStopped += (_, _) => _logger.LogInformation("Stream Stopped");
-            
+
             try
             {
                 await stream.StartMatchingAnyConditionAsync().WaitAsync(stoppingToken);
@@ -56,11 +50,11 @@ public class DrManhattanResponder : BackgroundService
             }
         }
     }
-    
+
     private async void Received(ITweet tweet)
     {
         _logger.LogInformation("{tweet}", tweet);
-        
+
         // I'm not dealing with this s#@$!
         if (_profanityFilter.IsProfanity(tweet.Text))
         {
@@ -73,23 +67,23 @@ public class DrManhattanResponder : BackgroundService
             _logger.LogInformation("Ignore mentions of the bot");
             return;
         }
-        
+
         try
         {
             var client = tweet.Client;
 
-            var text = tweet.Text.Replace($"@{_user.ScreenName}", "").Trim();
+            var text = tweet.Text.Replace($"@{_user.ScreenName}", string.Empty).Trim();
             var content = TiredManhattanGenerator.Clean(text);
-            
+
             var image = await TiredManhattanGenerator.GenerateBytes(content);
             var upload = await _twitterClient.Upload.UploadTweetImageAsync(image);
-            
+
             var parameters = new PublishTweetParameters($"@{tweet.CreatedBy}")
             {
                 InReplyToTweet = tweet,
                 Medias = { upload }
             };
-            
+
             await client.Tweets.PublishTweetAsync(parameters);
             _logger.LogInformation("Reply sent to {username}", tweet.CreatedBy);
         }

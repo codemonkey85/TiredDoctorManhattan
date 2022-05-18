@@ -32,4 +32,8 @@
         </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="TiredDoctorManhattan.Shared\TiredDoctorManhattan.Shared.csproj" />
+    </ItemGroup>
+
 </Project>
