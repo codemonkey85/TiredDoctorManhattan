@@ -80,8 +80,22 @@ public static class TiredManhattanGenerator
     public static string Clean(string? text)
     {
         var content = string.IsNullOrWhiteSpace(text) ? "the emptiness" : text.Trim();
+
+        // remove newlines and tabs
+        content = Regex.Replace(content, @"\t|\n|\r", "");
+
+        // exclude long tweets
         content = content.Length > 30 ? "long tweets" : content;
-        content = $"I AM TIRED OF {content}.".ToUpperInvariant();
+
+        // No Unicode - damn emojis!
+        content = content.ContainsUnicode() ? "Unicode & Emojis" : content;
+
+        // make the line work
+
+        content = content.Equals("beans", StringComparison.OrdinalIgnoreCase)
+            ? "JEREMY SINCLAIR LOVES BEANS."
+            : $"I AM TIRED OF {content}.".ToUpperInvariant();
+
         return content;
     }
 }
