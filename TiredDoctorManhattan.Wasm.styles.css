@@ -8,19 +8,19 @@ img[b-r61rg46iq7] {
     margin: 5px;
 }
 
-.default-image[b-r61rg46iq7] {
+.default-image[b-r61rg46iq7], .generated-image[b-r61rg46iq7] {
     width: 800px;
     height: auto;
 }
 
 @media only screen and (max-width: 844px) {
-    .default-image[b-r61rg46iq7] {
+    .default-image[b-r61rg46iq7], .generated-image[b-r61rg46iq7] {
         width: 80%;
     }
 }
 
 @media only screen and (max-width: 420px) {
-    .default-image[b-r61rg46iq7] {
+    .default-image[b-r61rg46iq7], .generated-image[b-r61rg46iq7] {
         width: 350px;
     }
 }
@@ -35,74 +35,8 @@ main[b-rs4pg059ad] {
     flex: 1;
 }
 
-.sidebar[b-rs4pg059ad] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row[b-rs4pg059ad] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-    .top-row[b-rs4pg059ad]  a, .top-row[b-rs4pg059ad]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
-
-        .top-row[b-rs4pg059ad]  a:hover, .top-row[b-rs4pg059ad]  .btn-link:hover {
-            text-decoration: underline;
-        }
-
-        .top-row[b-rs4pg059ad]  a:first-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-@media (max-width: 640.98px) {
-    .top-row:not(.auth)[b-rs4pg059ad] {
-        display: none;
-    }
-
-    .top-row.auth[b-rs4pg059ad] {
-        justify-content: space-between;
-    }
-
-    .top-row[b-rs4pg059ad]  a, .top-row[b-rs4pg059ad]  .btn-link {
-        margin-left: 0;
-    }
-}
-
 @media (min-width: 641px) {
     .page[b-rs4pg059ad] {
         flex-direction: row;
-    }
-
-    .sidebar[b-rs4pg059ad] {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row[b-rs4pg059ad] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-        .top-row.auth[b-rs4pg059ad]  a:first-child {
-            flex: 1;
-            text-align: right;
-            width: 0;
-        }
-
-    .top-row[b-rs4pg059ad], article[b-rs4pg059ad] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }

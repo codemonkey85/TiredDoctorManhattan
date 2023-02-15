@@ -1,6 +1,6 @@
 {
-  "name": "TiredDoctorManhattan.Wasm",
-  "short_name": "TiredDoctorManhattan.Wasm",
+  "name": "Tired Doctor Manhattan",
+  "short_name": "Tired Doctor Manhattan",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
