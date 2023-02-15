@@ -6,11 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC8E964C-7F86-4DE1-BF9F-5B2217EEEC48}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiredDoctorManhattan.Wasm", "TiredDoctorManhattan.Wasm\TiredDoctorManhattan.Wasm.csproj", "{AD079EAA-2271-4AD4-B378-D275B74E909E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiredDoctorManhattan.Wasm", "TiredDoctorManhattan.Wasm\TiredDoctorManhattan.Wasm.csproj", "{AD079EAA-2271-4AD4-B378-D275B74E909E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiredDoctorManhattan.Shared", "TiredDoctorManhattan.Shared\TiredDoctorManhattan.Shared.csproj", "{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiredDoctorManhattan.Shared", "TiredDoctorManhattan.Shared\TiredDoctorManhattan.Shared.csproj", "{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

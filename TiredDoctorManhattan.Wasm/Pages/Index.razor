@@ -1,21 +1,21 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>@PageTitle</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>@PageTitle</h1>
 
 <form @onsubmit=GenerateImage>
-    <input type="text" @bind=textToRender />
+    <input type="text" @bind=TextToRender />
     <button type="submit" class="btn btn-primary">Generate</button>
 </form>
 
 <div>
-    @if (imageBytes is not null)
+    @if (ImageBytes is not null)
     {
-        <img src="data:image/png;base64,@getImageBase64">
+        <img src="data:image/png;base64,@GetImageBase64">
     }
     else
     {
-        <img src="assets/background.png">
+        <img src="assets/background.png" class="default-image">
     }
 </div>
