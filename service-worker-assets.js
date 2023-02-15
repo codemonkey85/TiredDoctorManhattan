@@ -313,10 +313,6 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
-      "url": "favicon.ico"
-    },
-    {
       "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
       "url": "icon-192.png"
     },
@@ -325,7 +321,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-vm7OQK0QrPj5Etb66WFwsajWmy1ggaJ0XfEFroOW6uU=",
+      "hash": "sha256-2qiTTdvO3H1wCVTfBTebZlNCOfB9Pkysdhhl+9+HY3E=",
       "url": "index.html"
     },
     {
@@ -377,5 +373,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "uwKEdO6o"
+  "version": "kPZ3F4cO"
 };
