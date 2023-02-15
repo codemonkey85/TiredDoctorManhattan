@@ -1,6 +1,8 @@
 # Tired Manhattan Twitter Bot and Image Generator
 
-[![Azure Static Web Apps CI/CD](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/azure-static-web-apps-green-dune-0713d970f.yml/badge.svg)](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/azure-static-web-apps-green-dune-0713d970f.yml)
+Check it out: https://codemonkey85.github.io/TiredDoctorManhattan/
+
+[![Deploy to GitHub Pages](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/main.yml/badge.svg)](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/main.yml)
 
 ![Tired Manhattan](image.png)
 
@@ -14,7 +16,7 @@ can have the bot tweet by calling `/tweet?text=`. That said, only I, [@buhakmeh]
 have the credentials, so you'll have to make your own bot :)
 
 That said, this is a great starting point if you're building a Twitter bot to respond
-to folks on Twitter. 
+to folks on Twitter.
 
 ## Requirements
 
@@ -29,7 +31,7 @@ to folks on Twitter.
 - ASP.NET Core - https://dot.net
 - Slugify.Core - https://github.com/ctolkien/Slugify
 
-## License 
+## License
 
 Copyright © 2022 khalidabuhakmeh
 
