@@ -1,4 +1,9 @@
-﻿img {
+﻿.working-message {
+    margin: 5px;
+    padding: 5px;
+}
+
+img {
     margin: 5px;
 }
 

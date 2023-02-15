@@ -5,17 +5,26 @@
 <h1>@PageTitle</h1>
 
 <form @onsubmit=GenerateImage>
-    <input type="text" @bind=TextToRender />
+    <label for="textToRender">I am tired of...</label>
+    <input id="textToRender" type="text" @bind=TextToRender />
     <button type="submit" class="btn btn-primary">Generate</button>
+    @if (IsWorking)
+    {
+        <span class="working-message">
+            <strong>
+                Working...
+            </strong>
+        </span>
+    }
 </form>
 
 <div>
     @if (ImageBytes is not null)
     {
-        <img src="data:image/png;base64,@GetImageBase64">
+        <img src="data:image/png;base64,@GetImageBase64" alt="Doctor Manhattan: I am tired of @TextToRender">
     }
     else
     {
-        <img src="assets/background.png" class="default-image">
+        <img src="assets/background.png" class="default-image" alt="Doctor Manhattan">
     }
 </div>
