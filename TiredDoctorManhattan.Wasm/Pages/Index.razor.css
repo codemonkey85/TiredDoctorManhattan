@@ -7,19 +7,19 @@ img {
     margin: 5px;
 }
 
-.default-image {
+.default-image, .generated-image {
     width: 800px;
     height: auto;
 }
 
 @media only screen and (max-width: 844px) {
-    .default-image {
+    .default-image, .generated-image {
         width: 80%;
     }
 }
 
 @media only screen and (max-width: 420px) {
-    .default-image {
+    .default-image, .generated-image {
         width: 350px;
     }
 }
