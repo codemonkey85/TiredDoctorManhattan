@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiredDoctorManhattan.Wasm", "TiredDoctorManhattan.Wasm\TiredDoctorManhattan.Wasm.csproj", "{AD079EAA-2271-4AD4-B378-D275B74E909E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TiredDoctorManhattan.Shared", "TiredDoctorManhattan.Shared\TiredDoctorManhattan.Shared.csproj", "{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{AD079EAA-2271-4AD4-B378-D275B74E909E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD079EAA-2271-4AD4-B378-D275B74E909E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD079EAA-2271-4AD4-B378-D275B74E909E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E892673D-BB35-46CD-92D0-8D26DC5B6BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-namespace TiredDoctorManhattan.Shared;
+namespace TiredDoctorManhattan.Wasm.Shared;
 
 public static class TiredManhattanGenerator
 {
@@ -11,14 +11,14 @@ public static class TiredManhattanGenerator
 
         var background = await Settings.GetBackground(backgroundStream);
 
-        var textOptions = new TextOptions(Settings.GetFont(fontStream))
+        var textOptions = new RichTextOptions(Settings.GetFont(fontStream))
         {
             VerticalAlignment = VerticalAlignment.Center,
             TextAlignment = TextAlignment.Center,
             Origin = Settings.TextBoxOrigin
         };
 
-        var textRectangle = TextMeasurer.Measure(text, textOptions);
+        var textRectangle = TextMeasurer.MeasureBounds(text, textOptions);
 
         var width = textRectangle.Width + Settings.TextPadding * 2;
         var height = textRectangle.Height + Settings.TextPadding * 2;
@@ -80,22 +80,8 @@ public static class TiredManhattanGenerator
     public static string Clean(string? text)
     {
         var content = string.IsNullOrWhiteSpace(text) ? "the emptiness" : text.Trim();
-
-        // remove newlines and tabs
-        content = Regex.Replace(content, @"\t|\n|\r", "");
-
-        // exclude long tweets
         content = content.Length > 30 ? "long tweets" : content;
-
-        // No Unicode - damn emojis!
-        content = content.ContainsUnicode() ? "Unicode & Emojis" : content;
-
-        // make the line work
-
-        content = content.Equals("beans", StringComparison.OrdinalIgnoreCase)
-            ? "JEREMY SINCLAIR LOVES BEANS."
-            : $"I AM TIRED OF {content}.".ToUpperInvariant();
-
+        content = $"I AM TIRED OF {content}.".ToUpperInvariant();
         return content;
     }
 }

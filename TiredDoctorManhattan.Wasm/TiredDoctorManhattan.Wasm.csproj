@@ -12,10 +12,10 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-preview.7.23375.9" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-preview.7.23375.9" PrivateAssets="all" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\TiredDoctorManhattan.Shared\TiredDoctorManhattan.Shared.csproj" />
+		<PackageReference Include="SixLabors.Fonts" Version="1.0.0" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
+		<PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0" />
+		<PackageReference Include="Slugify.Core" Version="4.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
