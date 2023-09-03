@@ -11,14 +11,14 @@ public static class TiredManhattanGenerator
 
         var background = await Settings.GetBackground(backgroundStream);
 
-        var textOptions = new TextOptions(Settings.GetFont(fontStream))
+        var textOptions = new RichTextOptions(Settings.GetFont(fontStream))
         {
             VerticalAlignment = VerticalAlignment.Center,
             TextAlignment = TextAlignment.Center,
             Origin = Settings.TextBoxOrigin
         };
 
-        var textRectangle = TextMeasurer.Measure(text, textOptions);
+        var textRectangle = TextMeasurer.MeasureBounds(text, textOptions);
 
         var width = textRectangle.Width + Settings.TextPadding * 2;
         var height = textRectangle.Height + Settings.TextPadding * 2;
