@@ -1,4 +1,4 @@
-namespace TiredDoctorManhattan.Shared;
+namespace TiredDoctorManhattan.Wasm.Shared;
 
 public static class Settings
 {

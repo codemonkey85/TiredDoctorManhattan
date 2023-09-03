@@ -1,4 +1,12 @@
 ﻿global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-global using TiredDoctorManhattan.Shared;
+global using SixLabors.Fonts;
+global using SixLabors.ImageSharp;
+global using SixLabors.ImageSharp.Drawing;
+global using SixLabors.ImageSharp.Drawing.Processing;
+global using SixLabors.ImageSharp.Formats.Png;
+global using SixLabors.ImageSharp.PixelFormats;
+global using SixLabors.ImageSharp.Processing;
+global using Slugify;
 global using TiredDoctorManhattan.Wasm;
+global using TiredDoctorManhattan.Wasm.Shared;

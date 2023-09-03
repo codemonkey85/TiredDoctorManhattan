@@ -17,7 +17,6 @@ public partial class Index
             using var backgroundStream = await HttpClient.GetStreamAsync("assets/background.png");
             using var fontStream = await HttpClient.GetStreamAsync("assets/KMKDSPK_.ttf");
             ImageBytes = await TiredManhattanGenerator.GenerateBytes(backgroundStream, fontStream, text);
-            //var image = await TiredManhattanGenerator.Generate(stream, text);
         }
         catch (Exception ex)
         {
