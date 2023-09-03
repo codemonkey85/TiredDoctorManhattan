@@ -2,12 +2,12 @@ namespace TiredDoctorManhattan.Wasm.Shared;
 
 public static class TiredManhattanGenerator
 {
-    public static async Task<Image> Generate(Stream backgroundStream, Stream fontStream, string text)
+    public static async Task<Image> Generate(
+        Stream backgroundStream,
+        Stream fontStream,
+        string text)
     {
-        if (text is null)
-        {
-            throw new ArgumentNullException(nameof(text));
-        }
+        ArgumentNullException.ThrowIfNull(text);
 
         var background = await Settings.GetBackground(backgroundStream);
 
@@ -55,7 +55,10 @@ public static class TiredManhattanGenerator
         return background;
     }
 
-    public static async Task<byte[]> GenerateBytes(Stream backgroundStream, Stream fontStream, string text)
+    public static async Task<byte[]> GenerateBytes(
+        Stream backgroundStream,
+        Stream fontStream,
+        string text)
     {
         using var ms = new MemoryStream();
         var image = await Generate(backgroundStream, fontStream, text);
@@ -65,16 +68,6 @@ public static class TiredManhattanGenerator
         ms.Seek(0, SeekOrigin.Begin);
 
         return ms.ToArray();
-    }
-
-    public static async Task Save(Stream backgroundStream, Stream fontStream, string text, string outputPath = "./")
-    {
-        var path = System.IO.Path.HasExtension(outputPath)
-            ? outputPath
-            : System.IO.Path.Combine(outputPath, $"{text.Slugify()}.png");
-
-        var image = await Generate(backgroundStream, fontStream, text);
-        await image.SaveAsPngAsync(path);
     }
 
     public static string Clean(string? text)
