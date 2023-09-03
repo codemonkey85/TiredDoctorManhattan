@@ -2,9 +2,13 @@ namespace TiredDoctorManhattan.Wasm.Pages;
 
 public partial class Index
 {
+    [Parameter]
+    public string? TextToRender { get; set; }
+
     private static string PageTitle => "Tired Doctor Manhattan";
-    private string TextToRender { get; set; } = default!;
+
     private byte[]? ImageBytes { get; set; }
+
     private string? GetImageBase64 => ImageBytes is null
         ? null
         : Convert.ToBase64String(ImageBytes);

@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/{TextToRender?}"
 
 <PageTitle>
     @PageTitle
@@ -14,7 +14,7 @@
     </label>
     <input id="textToRender"
            type="text"
-           @bind=TextToRender />
+    @bind=TextToRender />
     <button type="submit"
             class="btn btn-primary">
         Generate
