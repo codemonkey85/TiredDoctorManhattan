@@ -4009,41 +4009,6 @@ var tempI64;
   }
   }
 
-  /** @param {number=} offset */
-  function doWritev(stream, iov, iovcnt, offset) {
-      var ret = 0;
-      for (var i = 0; i < iovcnt; i++) {
-        var ptr = HEAPU32[((iov)>>2)];
-        var len = HEAPU32[(((iov)+(4))>>2)];
-        iov += 8;
-        var curr = FS.write(stream, HEAP8,ptr, len, offset);
-        if (curr < 0) return -1;
-        ret += curr;
-        if (typeof offset !== 'undefined') {
-          offset += curr;
-        }
-      }
-      return ret;
-    }
-  
-  
-  
-  
-  
-  function _fd_pwrite(fd, iov, iovcnt, /** @type {!BigInt} */ offset, pnum) {
-  try {
-  
-      offset = bigintToI53Checked(offset); if (isNaN(offset)) return 61;
-      var stream = SYSCALLS.getStreamFromFD(fd)
-      var num = doWritev(stream, iov, iovcnt, offset);
-      HEAPU32[((pnum)>>2)] = num;
-      return 0;
-    } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
-    return e.errno;
-  }
-  }
-
   
   function _fd_read(fd, iov, iovcnt, pnum) {
   try {
@@ -4077,20 +4042,22 @@ var tempI64;
   }
   }
 
-  function _fd_sync(fd) {
-  try {
-  
-      var stream = SYSCALLS.getStreamFromFD(fd);
-      if (stream.stream_ops && stream.stream_ops.fsync) {
-        return stream.stream_ops.fsync(stream);
+  /** @param {number=} offset */
+  function doWritev(stream, iov, iovcnt, offset) {
+      var ret = 0;
+      for (var i = 0; i < iovcnt; i++) {
+        var ptr = HEAPU32[((iov)>>2)];
+        var len = HEAPU32[(((iov)+(4))>>2)];
+        iov += 8;
+        var curr = FS.write(stream, HEAP8,ptr, len, offset);
+        if (curr < 0) return -1;
+        ret += curr;
+        if (typeof offset !== 'undefined') {
+          offset += curr;
+        }
       }
-      return 0; // we can't do anything synchronously; the in-memory FS is already synced to
-    } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
-    return e.errno;
-  }
-  }
-
+      return ret;
+    }
   
   function _fd_write(fd, iov, iovcnt, pnum) {
   try {
@@ -5137,10 +5104,8 @@ var wasmImports = {
   "exit": _exit,
   "fd_close": _fd_close,
   "fd_pread": _fd_pread,
-  "fd_pwrite": _fd_pwrite,
   "fd_read": _fd_read,
   "fd_seek": _fd_seek,
-  "fd_sync": _fd_sync,
   "fd_write": _fd_write,
   "mono_interp_flush_jitcall_queue": _mono_interp_flush_jitcall_queue,
   "mono_interp_invoke_wasm_jit_call_trampoline": _mono_interp_invoke_wasm_jit_call_trampoline,
@@ -5298,16 +5263,6 @@ var _cosf = Module["_cosf"] = function() {
 };
 
 /** @type {function(...*):?} */
-var _sin = Module["_sin"] = function() {
-  return (_sin = Module["_sin"] = Module["asm"]["sin"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _cos = Module["_cos"] = function() {
-  return (_cos = Module["_cos"] = Module["asm"]["cos"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
 var _mono_aot_SixLabors_ImageSharp_Drawing_get_method = Module["_mono_aot_SixLabors_ImageSharp_Drawing_get_method"] = function() {
   return (_mono_aot_SixLabors_ImageSharp_Drawing_get_method = Module["_mono_aot_SixLabors_ImageSharp_Drawing_get_method"] = Module["asm"]["mono_aot_SixLabors_ImageSharp_Drawing_get_method"]).apply(null, arguments);
 };
@@ -5315,11 +5270,6 @@ var _mono_aot_SixLabors_ImageSharp_Drawing_get_method = Module["_mono_aot_SixLab
 /** @type {function(...*):?} */
 var _mono_aot_TiredDoctorManhattan_Wasm_get_method = Module["_mono_aot_TiredDoctorManhattan_Wasm_get_method"] = function() {
   return (_mono_aot_TiredDoctorManhattan_Wasm_get_method = Module["_mono_aot_TiredDoctorManhattan_Wasm_get_method"] = Module["asm"]["mono_aot_TiredDoctorManhattan_Wasm_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Buffers_get_method = Module["_mono_aot_System_Buffers_get_method"] = function() {
-  return (_mono_aot_System_Buffers_get_method = Module["_mono_aot_System_Buffers_get_method"] = Module["asm"]["mono_aot_System_Buffers_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
@@ -5343,18 +5293,8 @@ var _mono_aot_System_Console_get_method = Module["_mono_aot_System_Console_get_m
 };
 
 /** @type {function(...*):?} */
-var _mono_aot_System_Diagnostics_Debug_get_method = Module["_mono_aot_System_Diagnostics_Debug_get_method"] = function() {
-  return (_mono_aot_System_Diagnostics_Debug_get_method = Module["_mono_aot_System_Diagnostics_Debug_get_method"] = Module["asm"]["mono_aot_System_Diagnostics_Debug_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
 var _mono_aot_System_Diagnostics_DiagnosticSource_get_method = Module["_mono_aot_System_Diagnostics_DiagnosticSource_get_method"] = function() {
   return (_mono_aot_System_Diagnostics_DiagnosticSource_get_method = Module["_mono_aot_System_Diagnostics_DiagnosticSource_get_method"] = Module["asm"]["mono_aot_System_Diagnostics_DiagnosticSource_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Diagnostics_Tools_get_method = Module["_mono_aot_System_Diagnostics_Tools_get_method"] = function() {
-  return (_mono_aot_System_Diagnostics_Tools_get_method = Module["_mono_aot_System_Diagnostics_Tools_get_method"] = Module["asm"]["mono_aot_System_Diagnostics_Tools_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
@@ -5365,11 +5305,6 @@ var _mono_aot_System_IO_Compression_Brotli_get_method = Module["_mono_aot_System
 /** @type {function(...*):?} */
 var _mono_aot_System_IO_Compression_get_method = Module["_mono_aot_System_IO_Compression_get_method"] = function() {
   return (_mono_aot_System_IO_Compression_get_method = Module["_mono_aot_System_IO_Compression_get_method"] = Module["asm"]["mono_aot_System_IO_Compression_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_IO_FileSystem_get_method = Module["_mono_aot_System_IO_FileSystem_get_method"] = function() {
-  return (_mono_aot_System_IO_FileSystem_get_method = Module["_mono_aot_System_IO_FileSystem_get_method"] = Module["asm"]["mono_aot_System_IO_FileSystem_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
@@ -5398,43 +5333,13 @@ var _mono_aot_System_Numerics_Vectors_get_method = Module["_mono_aot_System_Nume
 };
 
 /** @type {function(...*):?} */
-var _mono_aot_System_ObjectModel_get_method = Module["_mono_aot_System_ObjectModel_get_method"] = function() {
-  return (_mono_aot_System_ObjectModel_get_method = Module["_mono_aot_System_ObjectModel_get_method"] = Module["asm"]["mono_aot_System_ObjectModel_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
 var _mono_aot_System_Private_Uri_get_method = Module["_mono_aot_System_Private_Uri_get_method"] = function() {
   return (_mono_aot_System_Private_Uri_get_method = Module["_mono_aot_System_Private_Uri_get_method"] = Module["asm"]["mono_aot_System_Private_Uri_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
-var _mono_aot_System_Resources_ResourceManager_get_method = Module["_mono_aot_System_Resources_ResourceManager_get_method"] = function() {
-  return (_mono_aot_System_Resources_ResourceManager_get_method = Module["_mono_aot_System_Resources_ResourceManager_get_method"] = Module["asm"]["mono_aot_System_Resources_ResourceManager_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Runtime_CompilerServices_Unsafe_get_method = Module["_mono_aot_System_Runtime_CompilerServices_Unsafe_get_method"] = function() {
-  return (_mono_aot_System_Runtime_CompilerServices_Unsafe_get_method = Module["_mono_aot_System_Runtime_CompilerServices_Unsafe_get_method"] = Module["asm"]["mono_aot_System_Runtime_CompilerServices_Unsafe_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Runtime_Extensions_get_method = Module["_mono_aot_System_Runtime_Extensions_get_method"] = function() {
-  return (_mono_aot_System_Runtime_Extensions_get_method = Module["_mono_aot_System_Runtime_Extensions_get_method"] = Module["asm"]["mono_aot_System_Runtime_Extensions_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
 var _mono_aot_System_Runtime_InteropServices_JavaScript_get_method = Module["_mono_aot_System_Runtime_InteropServices_JavaScript_get_method"] = function() {
   return (_mono_aot_System_Runtime_InteropServices_JavaScript_get_method = Module["_mono_aot_System_Runtime_InteropServices_JavaScript_get_method"] = Module["asm"]["mono_aot_System_Runtime_InteropServices_JavaScript_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Runtime_InteropServices_RuntimeInformation_get_method = Module["_mono_aot_System_Runtime_InteropServices_RuntimeInformation_get_method"] = function() {
-  return (_mono_aot_System_Runtime_InteropServices_RuntimeInformation_get_method = Module["_mono_aot_System_Runtime_InteropServices_RuntimeInformation_get_method"] = Module["asm"]["mono_aot_System_Runtime_InteropServices_RuntimeInformation_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Runtime_InteropServices_get_method = Module["_mono_aot_System_Runtime_InteropServices_get_method"] = function() {
-  return (_mono_aot_System_Runtime_InteropServices_get_method = Module["_mono_aot_System_Runtime_InteropServices_get_method"] = Module["asm"]["mono_aot_System_Runtime_InteropServices_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
@@ -5470,11 +5375,6 @@ var _mono_aot_System_Text_RegularExpressions_get_method = Module["_mono_aot_Syst
 /** @type {function(...*):?} */
 var _mono_aot_System_Threading_Tasks_Parallel_get_method = Module["_mono_aot_System_Threading_Tasks_Parallel_get_method"] = function() {
   return (_mono_aot_System_Threading_Tasks_Parallel_get_method = Module["_mono_aot_System_Threading_Tasks_Parallel_get_method"] = Module["asm"]["mono_aot_System_Threading_Tasks_Parallel_get_method"]).apply(null, arguments);
-};
-
-/** @type {function(...*):?} */
-var _mono_aot_System_Threading_get_method = Module["_mono_aot_System_Threading_get_method"] = function() {
-  return (_mono_aot_System_Threading_get_method = Module["_mono_aot_System_Threading_get_method"] = Module["asm"]["mono_aot_System_Threading_get_method"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
@@ -5858,6 +5758,11 @@ var _atanh = Module["_atanh"] = function() {
 };
 
 /** @type {function(...*):?} */
+var _cos = Module["_cos"] = function() {
+  return (_cos = Module["_cos"] = Module["asm"]["cos"]).apply(null, arguments);
+};
+
+/** @type {function(...*):?} */
 var _cbrt = Module["_cbrt"] = function() {
   return (_cbrt = Module["_cbrt"] = Module["asm"]["cbrt"]).apply(null, arguments);
 };
@@ -5875,6 +5780,11 @@ var _exp = Module["_exp"] = function() {
 /** @type {function(...*):?} */
 var _log2 = Module["_log2"] = function() {
   return (_log2 = Module["_log2"] = Module["asm"]["log2"]).apply(null, arguments);
+};
+
+/** @type {function(...*):?} */
+var _sin = Module["_sin"] = function() {
+  return (_sin = Module["_sin"] = Module["asm"]["sin"]).apply(null, arguments);
 };
 
 /** @type {function(...*):?} */
