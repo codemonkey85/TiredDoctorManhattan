@@ -2,6 +2,7 @@ namespace TiredDoctorManhattan.Wasm.Shared;
 
 public static class TiredManhattanGenerator
 {
+    [SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "<Pending>")]
     public static async Task<Image> Generate(
         Stream backgroundStream,
         Stream fontStream,
@@ -55,6 +56,7 @@ public static class TiredManhattanGenerator
         return background;
     }
 
+    [SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "<Pending>")]
     public static async Task<byte[]> GenerateBytes(
         Stream backgroundStream,
         Stream fontStream,

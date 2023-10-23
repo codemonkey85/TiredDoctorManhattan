@@ -21,8 +21,12 @@ public static class Settings
         await Image.LoadAsync(stream);
 
     public static PointF TextBoxOrigin { get; } = new(x: 824, y: 165); // px
+
     public static float TextPadding => 15; //px
+
     public static float BlackBorderThickness => 3;
+
     public static float WhiteBorderThickness => 5;
+
     public static Color ManhattanBlue { get; } = new(new Rgba32(1, 215, 253));
 }

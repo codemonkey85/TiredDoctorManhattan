@@ -20,10 +20,8 @@ public partial class Index
         try
         {
             var text = TiredManhattanGenerator.Clean(TextToRender);
-            using var backgroundStream = await HttpClient.GetStreamAsync(
-                "assets/background.png");
-            using var fontStream = await HttpClient.GetStreamAsync(
-                "assets/KMKDSPK_.ttf");
+            using var backgroundStream = await HttpClient.GetStreamAsync("assets/background.png");
+            using var fontStream = await HttpClient.GetStreamAsync("assets/KMKDSPK_.ttf");
             ImageBytes = await TiredManhattanGenerator.GenerateBytes(
                 backgroundStream, fontStream, text);
         }
