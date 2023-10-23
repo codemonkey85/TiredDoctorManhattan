@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TiredDoctorManhattan.Wasm",
   "resources": {
-    "hash": "sha256-8c75zTD6xqeZi37sN8/tXmgdsq6/fg1cYlyvEXIVHms=",
+    "hash": "sha256-SY8SCRgddSzRBi3/UaSvAcFm6jqrB8sOIJyv8jDCo8I=",
     "jsModuleNative": {
       "dotnet.native.8.0.0-rc.2.23479.6.deg5w704cb.js": "sha256-uYQNlaPJJY2GJl2sbhVgIK6yiLoom07O3jE2PA0h20M="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.0-rc.2.23479.6.lf65z6envp.js": "sha256-giy/yLhvB9hsa1DCWVWnpxpuf6kKvlYFh5rifY3mpQg="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-itrwvfzI/4u1+Rn0HuryO45+uE4BymAUX6bouGmWGUI="
+      "dotnet.native.wasm": "sha256-U5cPAL3oqvSJ2ED1Wur8g+4WqVE8JszOYC9NNUNbz8Y="
     },
     "assembly": {
       "Microsoft.AspNetCore.Components.wasm": "sha256-orRV8u3RMrpTfbVRTi9F60DTE8ly+bznQLbULfO8hpY=",
@@ -51,7 +51,7 @@
       "System.Text.Json.wasm": "sha256-zdFFNluioxtSGjs3FyTZMTmwWfUqz+c8EyXPf4MKqI8=",
       "System.Text.RegularExpressions.wasm": "sha256-/QeqCkm0MKp/TUf+SP3nGMlV9imK8XUhNd64UAN7/Mk=",
       "System.Threading.Tasks.Parallel.wasm": "sha256-4s8LtpehtriTM9kUkLx8FyXEoAJ9ousy1OpoeBZQyyI=",
-      "TiredDoctorManhattan.Wasm.wasm": "sha256-zaOLKyqzA+uTycL/k8JSZWKvEmKo44YXEf3uBWWm/mg="
+      "TiredDoctorManhattan.Wasm.wasm": "sha256-N1SAuBJqp9EbQ02rMwq7m+DWvdt2nthv5+jladLd/C4="
     }
   },
   "cacheBootResources": true,
