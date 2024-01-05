@@ -13,7 +13,7 @@
       "url": "_framework\/dotnet.runtime.8.0.0.t0913f5lcu.js"
     },
     {
-      "hash": "sha256-ZyvfBN9q2r7QjdzfxWYrXplw47jjGZMzGnVU9gSrf+o=",
+      "hash": "sha256-61okpmI+1nUAxTLpS4TG2yXRPsTyj0N1YMoDZDgBprY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -21,7 +21,7 @@
       "url": "_framework\/dotnet.native.8.0.0.deg5w704cb.js"
     },
     {
-      "hash": "sha256-puKk5ihnZQ6H87jNVYw59lYYwLCNoiF+aSO7Bcz+s9E=",
+      "hash": "sha256-LUSBcn4wEFsqB7Zs1zUg6ZOM95cn4+6Gyb83dsKRusU=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -81,15 +81,15 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-38mHT1BQ0oeahdf6c2fZS5P+l\/7i7fgbx4Huuyme1QM=",
+      "hash": "sha256-qwiYK5dSDsKshGBoeD5m8O+15mzBJTnrAjCQ3MoCMg4=",
       "url": "_framework\/SixLabors.Fonts.wasm"
     },
     {
-      "hash": "sha256-8jN6o++jL++sg5jflZb83EPb4X+dkSRP1gaUanrv1tw=",
+      "hash": "sha256-vyXy5CHGeF3mQzy1jwgxmsKjM8tIZSGv2z1mn8Wfwu0=",
       "url": "_framework\/SixLabors.ImageSharp.Drawing.wasm"
     },
     {
-      "hash": "sha256-8dpxA3h7ak7uW+BHjR8zYSRCiXAQtXghw\/g9gLCzUs4=",
+      "hash": "sha256-6me\/qzXgHrfLS925FsLBdX3QPrrHnLCO2iRC2jJfdPc=",
       "url": "_framework\/SixLabors.ImageSharp.wasm"
     },
     {
@@ -121,7 +121,7 @@
       "url": "_framework\/System.IO.Compression.wasm"
     },
     {
-      "hash": "sha256-RyCy34DSM9oM0rkDZxQhqjSs6NZLF8AHTDk+MEtxFmI=",
+      "hash": "sha256-XLVqp8tKbH3OmZRiqWz97nazF69bEcAbyf+qchZjAME=",
       "url": "_framework\/System.Linq.wasm"
     },
     {
@@ -141,7 +141,7 @@
       "url": "_framework\/System.Numerics.Vectors.wasm"
     },
     {
-      "hash": "sha256-Hq1Y5hCEFuLFZimPkw\/ZzeIu5CTNDio2U1bKN5nbGQc=",
+      "hash": "sha256-yWNzCrLOpLpH7m08hg3Lz6MqRF9nHnDplriwP1ZAFUQ=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/System.Threading.Tasks.Parallel.wasm"
     },
     {
-      "hash": "sha256-Yozt6ZYXa\/OoLf70PTWQP+c162oe0XfYzeoq0gvgNXE=",
+      "hash": "sha256-Uk7axShtOMxDDXROVdhzhKligEXNLAIY2XMnB\/0t9Ek=",
       "url": "_framework\/TiredDoctorManhattan.Wasm.wasm"
     },
     {
@@ -261,5 +261,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "iD85Usur"
+  "version": "uasGXkrr"
 };
