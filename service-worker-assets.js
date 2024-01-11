@@ -13,7 +13,7 @@
       "url": "_framework\/dotnet.runtime.8.0.1.jvv0ztohpa.js"
     },
     {
-      "hash": "sha256-r6LLx+2h1xGpQKS6diaiUSkvRIakaxctgkFO0C02ouo=",
+      "hash": "sha256-5oVTVlF7RgOJZA6+BlxLHXJGzv05aokRK7clWLVkI7o=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -21,7 +21,7 @@
       "url": "_framework\/dotnet.native.8.0.1.deg5w704cb.js"
     },
     {
-      "hash": "sha256-BfQwfWx9jNyK3aQ7AZw6zUB5Kfj1gYBgVe1Wo1az9pc=",
+      "hash": "sha256-v1uoJ6+okUiC1p9iF92JRuuR4ClY8p+fYoxvw4T2aec=",
       "url": "_framework\/dotnet.native.wasm"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/System.Threading.Tasks.Parallel.wasm"
     },
     {
-      "hash": "sha256-9nCVeqSM1dRveivjz6qq2cWcAMSgaNFxvuGBpPIXJII=",
+      "hash": "sha256-t9pGxj1+IJkrEhn6hMLNSR8PZHopZItetuTrbYCRdRg=",
       "url": "_framework\/TiredDoctorManhattan.Wasm.wasm"
     },
     {
@@ -261,5 +261,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "Y\/hYt3OM"
+  "version": "uL3DmYRo"
 };
