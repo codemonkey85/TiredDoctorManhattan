@@ -13,7 +13,7 @@ tab_width = 4
 
 # New line preferences
 end_of_line = crlf
-insert_final_newline = false
+insert_final_newline = true
 
 #### .NET Coding Conventions ####
 
@@ -257,3 +257,6 @@ dotnet_style_qualification_for_field = false:suggestion
 dotnet_style_qualification_for_property = false:suggestion
 dotnet_style_qualification_for_event = false:suggestion
 dotnet_style_qualification_for_method = false:suggestion
+
+[*.{razor,js,css,html}]
+insert_final_newline = true
