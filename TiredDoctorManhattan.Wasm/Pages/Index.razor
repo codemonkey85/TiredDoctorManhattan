@@ -15,9 +15,11 @@
     <input id="textToRender"
            type="text"
            maxlength="30"
+           disabled="@IsWorking"
            @bind=TextToRender />
     <button type="submit"
-            class="btn btn-primary">
+            class="btn btn-primary"
+            disabled="@IsWorking">
         Generate
     </button>
     @if (IsWorking)
