@@ -36,12 +36,9 @@
     }
     else if (GenerationTime is { TotalSeconds: { } totalSeconds } )
     {
-        <span>
-            <strong>
-                Generation time:
-            </strong>
-            @totalSeconds seconds
-        </span>
+        <strong>
+            Image generated in @totalSeconds seconds.
+        </strong>
     }
 
 </form>
