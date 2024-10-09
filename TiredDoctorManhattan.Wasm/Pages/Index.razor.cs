@@ -1,9 +1,14 @@
+using System.Diagnostics;
+using System.Timers;
+
 namespace TiredDoctorManhattan.Wasm.Pages;
 
 public partial class Index
 {
-    [Parameter]
-    public string? TextToRender { get; set; }
+    private const string BackgroundImageLocation = "assets/background.png";
+    private const string FontLocation = "assets/KMKDSPK_.ttf";
+
+    [Parameter] public string? TextToRender { get; set; }
 
     private static string PageTitle => "Tired Doctor Manhattan";
 
@@ -12,16 +17,24 @@ public partial class Index
     private string? GetImageBase64 => ImageBytes is null
         ? null
         : Convert.ToBase64String(ImageBytes);
-    private bool IsWorking { get; set; } = false;
+
+    private bool IsWorking { get; set; }
+
+    private TimeSpan? GenerationTime { get; set; }
 
     private async Task GenerateImage()
     {
         IsWorking = true;
+        GenerationTime = null;
+        var stopwatch = Stopwatch.StartNew();
+
         try
         {
             var text = TiredManhattanGenerator.Clean(TextToRender);
-            using var backgroundStream = await HttpClient.GetStreamAsync("assets/background.png");
-            using var fontStream = await HttpClient.GetStreamAsync("assets/KMKDSPK_.ttf");
+
+            await using var backgroundStream = await HttpClient.GetStreamAsync(BackgroundImageLocation);
+            await using var fontStream = await HttpClient.GetStreamAsync(FontLocation);
+
             ImageBytes = await TiredManhattanGenerator.GenerateBytes(
                 backgroundStream, fontStream, text);
         }
@@ -32,6 +45,8 @@ public partial class Index
         finally
         {
             IsWorking = false;
+            stopwatch.Stop();
+            GenerationTime = stopwatch.Elapsed;
         }
     }
 }

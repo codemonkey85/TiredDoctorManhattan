@@ -3,7 +3,7 @@ namespace TiredDoctorManhattan.Wasm.Shared;
 public static class TiredManhattanGenerator
 {
     [SuppressMessage("Style", "IDE0058:Expression value is never used", Justification = "<Pending>")]
-    public static async Task<Image> Generate(
+    private static async Task<Image> Generate(
         Stream backgroundStream,
         Stream fontStream,
         string text)
@@ -75,7 +75,7 @@ public static class TiredManhattanGenerator
     public static string Clean(string? text)
     {
         var content = string.IsNullOrWhiteSpace(text) ? "the emptiness" : text.Trim();
-        content = content.Length > 30 ? "long tweets" : content;
+        content = content.Length > 30 ? "long text" : content;
         content = $"I AM TIRED OF {content}.".ToUpperInvariant();
         return content;
     }

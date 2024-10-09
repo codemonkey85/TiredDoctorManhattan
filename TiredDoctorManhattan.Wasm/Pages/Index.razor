@@ -8,20 +8,24 @@
     @PageTitle
 </h1>
 
-<form @onsubmit=GenerateImage>
+<form @onsubmit="@GenerateImage">
+
     <label for="textToRender">
         I am tired of...
     </label>
+
     <input id="textToRender"
            type="text"
            maxlength="30"
            disabled="@IsWorking"
-           @bind=TextToRender />
+           @bind="@TextToRender" />
+
     <button type="submit"
             class="btn btn-primary"
             disabled="@IsWorking">
         Generate
     </button>
+
     @if (IsWorking)
     {
         <span class="working-message">
@@ -30,6 +34,16 @@
             </strong>
         </span>
     }
+    else if (GenerationTime is { TotalSeconds: { } totalSeconds } )
+    {
+        <span>
+            <strong>
+                Generation time:
+            </strong>
+            @totalSeconds seconds
+        </span>
+    }
+
 </form>
 
 <div>

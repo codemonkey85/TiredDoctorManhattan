@@ -4,16 +4,18 @@ public static class Settings
 {
     private static int FontSize => 26; //px
 
-    private static Font? _font;
+    private static Font? font;
+
     public static Font GetFont(Stream fontStream)
     {
-        if (_font is not null)
+        if (font is not null)
         {
-            return _font;
+            return font;
         }
+
         FontCollection collection = new();
         var family = collection.Add(fontStream);
-        return _font = family.CreateFont(FontSize, FontStyle.Bold);
+        return font = family.CreateFont(FontSize, FontStyle.Bold);
     }
 
     // return a new instance every time
