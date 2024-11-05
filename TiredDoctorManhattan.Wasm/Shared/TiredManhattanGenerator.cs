@@ -76,7 +76,7 @@ public static class TiredManhattanGenerator
     {
         var content = string.IsNullOrWhiteSpace(text) ? "the emptiness" : text.Trim();
         content = content.Length > 30 ? "long text" : content;
-        content = $"I AM TIRED OF {content}.".ToUpperInvariant();
+        content = $"I AM TIRED OF {content.ToUpperInvariant()}.";
         return content;
     }
 }
