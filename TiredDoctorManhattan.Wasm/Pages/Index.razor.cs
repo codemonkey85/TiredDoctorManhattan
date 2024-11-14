@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Timers;
 
 namespace TiredDoctorManhattan.Wasm.Pages;
 
@@ -11,6 +10,8 @@ public partial class Index
     [Parameter] public string? TextToRender { get; set; }
 
     private static string PageTitle => "Tired Doctor Manhattan";
+
+    private string AltText => $"Doctor Manhattan sitting on a rock on Mars saying: \"I am tired of {TextToRender}.\"";
 
     private byte[]? ImageBytes { get; set; }
 
