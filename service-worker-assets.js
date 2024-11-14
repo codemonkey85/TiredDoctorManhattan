@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "ItOr2HiR",
+  "version": "nATKPiJ+",
   "assets": [
     {
       "hash": "sha256-YnhOvdM6DJPGwRuDtc9HvCDWUZDyrAxkJvlWyVclMa8=",
@@ -170,11 +170,11 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.Tasks.Parallel.7mwzo5iv8i.wasm"
     },
     {
-      "hash": "sha256-ULDkPHJkn3yHa0FOCSuXJ8Y651YW5rQ9QY/Kp4MVT/k=",
-      "url": "_framework/TiredDoctorManhattan.Wasm.gc7yuuyvp0.wasm"
+      "hash": "sha256-jFoGpdpfPB3rp6KTX40oq/985DBgWT5aZ+TPqmR9Uog=",
+      "url": "_framework/TiredDoctorManhattan.Wasm.4k6l92iijz.wasm"
     },
     {
-      "hash": "sha256-LHDQLOoPt8LFHFkMgXhfmhkzdIaPxddM6SV3GE08NTI=",
+      "hash": "sha256-vnvWcqpEq42N3Y7DkPuTYxJBrTCjsKx659eoM3m0LAk=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -190,8 +190,8 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.bvhojhrb85.js"
     },
     {
-      "hash": "sha256-o8jhfca0sBQ6UTzIzJ8/IPyUtFRp/5O4KUJxmYIvsUs=",
-      "url": "_framework/dotnet.native.v12lnhv6kd.wasm"
+      "hash": "sha256-+KwPp4BEM1Px4ebwSfVOnz/VpX8t7b1wQf80fp1ne2A=",
+      "url": "_framework/dotnet.native.sj4cdhak63.wasm"
     },
     {
       "hash": "sha256-uD1t4tsPtmIHsx30SC4OztehGGaHVDksFD38rL2e3P4=",
