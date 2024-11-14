@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace TiredDoctorManhattan.Wasm.Pages;
 
 public partial class Index

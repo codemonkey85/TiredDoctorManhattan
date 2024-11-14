@@ -8,6 +8,7 @@ global using SixLabors.ImageSharp.Drawing.Processing;
 global using SixLabors.ImageSharp.Formats.Png;
 global using SixLabors.ImageSharp.PixelFormats;
 global using SixLabors.ImageSharp.Processing;
+global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
 global using TiredDoctorManhattan.Wasm;
 global using TiredDoctorManhattan.Wasm.Shared;
