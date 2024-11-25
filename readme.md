@@ -4,6 +4,8 @@ Check it out: https://codemonkey85.github.io/TiredDoctorManhattan/
 
 [![Deploy to GitHub Pages](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/main.yml/badge.svg)](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/main.yml)
 
+[![pages-build-deployment](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/codemonkey85/TiredDoctorManhattan/actions/workflows/pages/pages-build-deployment)
+
 [![Tired Manhattan](image.png)](https://codemonkey85.github.io/TiredDoctorManhattan/waiting%20for%20aot%20compilation)
 
 Original repo: https://github.com/khalidabuhakmeh/TiredDoctorManhattan
