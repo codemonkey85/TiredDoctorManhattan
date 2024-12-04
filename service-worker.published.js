@@ -14,7 +14,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
 
 const cacheNamePrefix = 'offline-cache-';
-const CACHE_VERSION = '12169202712'
+var CACHE_VERSION = Date.now().toString();
 const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}${CACHE_VERSION}`;
 
 const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, /\.json$/, /\.css$/, /\.woff$/, /\.png$/, /\.jpe?g$/, /\.gif$/, /\.ico$/, /\.blat$/, /\.dat$/ ];
