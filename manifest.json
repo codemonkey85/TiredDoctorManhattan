@@ -2,6 +2,7 @@
   "name": "Tired Doctor Manhattan",
   "short_name": "Tired Dr Manhattan",
   "start_url": "./",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
