@@ -12,7 +12,6 @@
 		<InvariantGlobalization>true</InvariantGlobalization>
 		<BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
 		<BlazorEnableCompression>true</BlazorEnableCompression>
-		<GenerateServiceWorkerAssetsManifest>true</GenerateServiceWorkerAssetsManifest>
 	</PropertyGroup>
 
 	<ItemGroup>
