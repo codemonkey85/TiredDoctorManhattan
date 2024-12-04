@@ -5,10 +5,6 @@ public partial class Index : IDisposable
     private const string BackgroundImageLocation = "assets/background.png";
     private const string FontLocation = "assets/KMKDSPK_.ttf";
 
-#pragma warning disable IDE0051 // Remove unused private members
-    private const string DeploymentId = "%%CACHE_VERSION%%";
-#pragma warning restore IDE0051 // Remove unused private members
-
     [Parameter] public string? TextToRender { get; set; }
 
     private static string PageTitle => "Tired Doctor Manhattan";
