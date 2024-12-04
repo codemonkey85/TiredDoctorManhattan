@@ -41,6 +41,12 @@ jobs:
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
+      - name: UpdateVersion
+        uses: datamonsters/replace-action@v2
+        with:
+          files: 'release/wwwroot/service-worker.published.js'
+          replacements: '%%CACHE_VERSION%%=${{ github.run_id }}'
+
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
