@@ -6,6 +6,9 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
 		<RunAOTCompilation>true</RunAOTCompilation>
+		<WasmStripILAfterAOT>true</WasmStripILAfterAOT>
+		<EmccMaximumHeapSize>268435456</EmccMaximumHeapSize>
+		<WasmEnableSIMD>false</WasmEnableSIMD>
 		<InvariantGlobalization>true</InvariantGlobalization>
 	</PropertyGroup>
 
