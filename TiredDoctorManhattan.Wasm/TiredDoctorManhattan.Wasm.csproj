@@ -10,6 +10,9 @@
 		<EmccMaximumHeapSize>268435456</EmccMaximumHeapSize>
 		<WasmEnableSIMD>false</WasmEnableSIMD>
 		<InvariantGlobalization>true</InvariantGlobalization>
+		<BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
+		<BlazorEnableCompression>true</BlazorEnableCompression>
+		<GenerateServiceWorkerAssetsManifest>true</GenerateServiceWorkerAssetsManifest>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,6 +26,10 @@
 	<ItemGroup>
 		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
 	</ItemGroup>
+
+	<Target Name="CopyServiceWorkerPublished" AfterTargets="Publish">
+		<Copy SourceFiles="wwwroot\service-worker.published.js" DestinationFiles="$(PublishDir)wwwroot\service-worker.published.js" />
+	</Target>
 
 	<ItemGroup>
 		<Content Update="wwwroot\assets\background.png">

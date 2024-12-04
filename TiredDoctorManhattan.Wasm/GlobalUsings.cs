@@ -1,6 +1,7 @@
 ﻿global using Microsoft.AspNetCore.Components;
 global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+global using Microsoft.JSInterop;
 global using SixLabors.Fonts;
 global using SixLabors.ImageSharp;
 global using SixLabors.ImageSharp.Drawing;
@@ -11,4 +12,5 @@ global using SixLabors.ImageSharp.Processing;
 global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
 global using TiredDoctorManhattan.Wasm;
+global using TiredDoctorManhattan.Wasm.Services;
 global using TiredDoctorManhattan.Wasm.Shared;

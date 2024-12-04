@@ -1,9 +1,13 @@
 namespace TiredDoctorManhattan.Wasm.Pages;
 
-public partial class Index
+public partial class Index : IDisposable
 {
     private const string BackgroundImageLocation = "assets/background.png";
     private const string FontLocation = "assets/KMKDSPK_.ttf";
+
+#pragma warning disable IDE0051 // Remove unused private members
+    private const string DeploymentId = "%%CACHE_VERSION%%";
+#pragma warning restore IDE0051 // Remove unused private members
 
     [Parameter] public string? TextToRender { get; set; }
 
@@ -13,6 +17,8 @@ public partial class Index
 
     private byte[]? ImageBytes { get; set; }
 
+    private bool IsUpdateAvailable { get; set; } = false;
+
     private string? GetImageBase64 => ImageBytes is null
         ? null
         : Convert.ToBase64String(ImageBytes);
@@ -20,6 +26,17 @@ public partial class Index
     private bool IsWorking { get; set; }
 
     private TimeSpan? GenerationTime { get; set; }
+
+    protected override void OnInitialized() => UpdateAlertService.OnUpdateAvailable += ShowUpdateMessage;
+
+    public void Dispose() => UpdateAlertService.OnUpdateAvailable -= ShowUpdateMessage;
+
+    public void ShowUpdateMessage()
+    {
+        // Display the alert when an update is available
+        IsUpdateAvailable = true;
+        StateHasChanged();
+    }
 
     private async Task GenerateImage()
     {

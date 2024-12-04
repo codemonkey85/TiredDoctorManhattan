@@ -4,6 +4,19 @@
     @PageTitle
 </PageTitle>
 
+@if (IsUpdateAvailable)
+{
+    <div class="alert alert-warning alert-dismissible fade show"
+         role="alert">
+        A new version of the app is available. Please refresh the page to update.
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+        </button>
+    </div>
+}
+
 <h1>
     @PageTitle
 </h1>

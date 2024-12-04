@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tired Doctor Manhattan</title>
     <base href="/" />
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,6 +17,9 @@
 </head>
 
 <body>
+
+    <div class="status-bar-safe-area"></div>
+
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
@@ -30,8 +33,57 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <!--prevent autostarting-->
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script>
+        navigator.serviceWorker.register('service-worker.published.js', { updateViaCache: 'none' }).then(registration => {
+            setInterval(() => registration.update(), 1 * 60 * 60 * 1000); // check for updates every hour
+            registration.onupdatefound = () => {
+                const installingWorker = registration.installing;
+                installingWorker.onstatechange = () => {
+                    if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // Notify Blazor about the update
+                        window.dispatchEvent(new CustomEvent('updateAvailable'));
+                    }
+                };
+            };
+        });
+    </script>
+
+    <script>
+        //check if webassembly is supported
+        const webassemblySupported = (function () {
+            try {
+                if (typeof WebAssembly === "object"
+                    && typeof WebAssembly.instantiate === "function") {
+                    const module = new WebAssembly.Module(
+                        Uint8Array.of(0x0, 0x61, 0x73, 0x6d,
+                            0x01, 0x00, 0x00, 0x00));
+                    if (module instanceof WebAssembly.Module)
+                        return new WebAssembly.Instance(module)
+                            instanceof WebAssembly.Instance;
+                }
+            } catch (e) {
+            }
+            return false;
+        })();
+        // Modern browsers e.g. Microsoft Edge
+        if (webassemblySupported) {
+            Blazor.start({});
+        }
+        // Older browsers e.g. IE11
+        else {
+            window.location = window.location + "BrowserNotSupported.html";
+        }
+    </script>
+
+    <script>
+        window.addUpdateListener = () => {
+            window.addEventListener('updateAvailable', () => {
+                DotNet.invokeMethodAsync('TiredDoctorManhattan.Wasm', 'ShowUpdateMessage');
+            });
+        };
+    </script>
 </body>
 
 </html>
