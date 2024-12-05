@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TiredDoctorManhattan.Wasm",
   "resources": {
-    "hash": "sha256-beTp/lBeGB9EN096sH8bZeu1Azk7BHnohTXPKUIF5ng=",
+    "hash": "sha256-n5VSdQdpQ+BaIG/KOEw2hVL9Wb+AbSAtqcB5z/IzHKc=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.qrqnonofbr.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.edi6ivms9h.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -45,9 +45,9 @@
       "System.Text.RegularExpressions.35mjrd68hw.wasm": "System.Text.RegularExpressions.wasm",
       "System.Threading.Tasks.Parallel.7mwzo5iv8i.wasm": "System.Threading.Tasks.Parallel.wasm",
       "System.Threading.cjrcei28ym.wasm": "System.Threading.wasm",
-      "TiredDoctorManhattan.Wasm.kclffwjweo.wasm": "TiredDoctorManhattan.Wasm.wasm",
+      "TiredDoctorManhattan.Wasm.skc13tc9bm.wasm": "TiredDoctorManhattan.Wasm.wasm",
       "dotnet.native.e6obms613b.js": "dotnet.native.js",
-      "dotnet.native.cg7l38qwgr.wasm": "dotnet.native.wasm",
+      "dotnet.native.bkhp09ta04.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.runtime.o8gq1i8bk6.js": "dotnet.runtime.js"
     },
@@ -58,7 +58,7 @@
       "dotnet.runtime.o8gq1i8bk6.js": "sha256-uD1t4tsPtmIHsx30SC4OztehGGaHVDksFD38rL2e3P4="
     },
     "wasmNative": {
-      "dotnet.native.cg7l38qwgr.wasm": "sha256-BERTE9jU9e2027WRAS3bG4pgd5O97W7Zh0V92rGKv1A="
+      "dotnet.native.bkhp09ta04.wasm": "sha256-Kzn1M0eG6XJl04n3UE2Yl/dKPP32Lwd+8gUqKpU/yOI="
     },
     "coreAssembly": {
       "Microsoft.AspNetCore.Components.qrqnonofbr.wasm": "sha256-RvsCtZSH2ZQs47yKmD4l1xX8zQRvdpLphM6nKDcGC6E=",
@@ -103,7 +103,7 @@
       "System.Text.RegularExpressions.35mjrd68hw.wasm": "sha256-16XJe6VAqH8XgwddV3MkRHHOgaI8QbDoCNabKvnXasM=",
       "System.Threading.Tasks.Parallel.7mwzo5iv8i.wasm": "sha256-IURxVQih/XLa4sFtrSnq7ziiRjGs4fp1LRVeVlSdm7w=",
       "System.Threading.cjrcei28ym.wasm": "sha256-aIx5rnPej8hcc5oeMQsaB4zHJDz9pje2l1AYFmX3mMw=",
-      "TiredDoctorManhattan.Wasm.kclffwjweo.wasm": "sha256-LMc7EFkstduffn4iO23a+3L+NHoSXc2kKrf52ohOOcA="
+      "TiredDoctorManhattan.Wasm.skc13tc9bm.wasm": "sha256-FJP1K7tgLQy0wNgMTP4dhLLVMxNQYL5Pd/Bhoh6MSXk="
     },
     "assembly": {}
   },
