@@ -25,30 +25,32 @@ public static class TiredManhattanGenerator
         var height = textRectangle.Height + Settings.TextPadding * 2;
 
         var container = new RectangularPolygon(
-            x: Settings.TextBoxOrigin.X - Settings.TextPadding,
-            y: Settings.TextBoxOrigin.Y - height / 2,
-            width: width,
-            height: height
+            Settings.TextBoxOrigin.X - Settings.TextPadding,
+            Settings.TextBoxOrigin.Y - height / 2,
+            width,
+            height
         );
+
         var blackBorder = new RectangularPolygon(
-            x: container.X - Settings.BlackBorderThickness,
-            y: container.Y - Settings.BlackBorderThickness,
-            width: container.Width + Settings.BlackBorderThickness * 2,
-            height: container.Height + Settings.BlackBorderThickness * 2
+            container.X - Settings.BlackBorderThickness,
+            container.Y - Settings.BlackBorderThickness,
+            container.Width + Settings.BlackBorderThickness * 2,
+            container.Height + Settings.BlackBorderThickness * 2
         );
+
         var whiteBorder = new RectangularPolygon(
-            x: blackBorder.X - Settings.WhiteBorderThickness,
-            y: blackBorder.Y - Settings.WhiteBorderThickness,
-            width: blackBorder.Width + Settings.WhiteBorderThickness * 2,
-            height: blackBorder.Height + Settings.WhiteBorderThickness * 2
+            blackBorder.X - Settings.WhiteBorderThickness,
+            blackBorder.Y - Settings.WhiteBorderThickness,
+            blackBorder.Width + Settings.WhiteBorderThickness * 2,
+            blackBorder.Height + Settings.WhiteBorderThickness * 2
         );
 
         background.Mutate(i =>
         {
-            i.Fill(Color.White, whiteBorder);
-            i.Fill(Color.Black, blackBorder);
+            i.Fill(ImageSharpColor.White, whiteBorder);
+            i.Fill(ImageSharpColor.Black, blackBorder);
             i.Fill(Settings.ManhattanBlue, container);
-            i.DrawText(textOptions, text, Color.Black);
+            i.DrawText(textOptions, text, ImageSharpColor.Black);
             // resize the image, it's kind of big right now
             i.Resize(background.Width / 2, background.Height / 2);
         });

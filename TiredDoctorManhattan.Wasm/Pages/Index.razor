@@ -17,44 +17,47 @@
     </div>
 }
 
-<h1>
-    @PageTitle
-</h1>
-
 <form @onsubmit="@GenerateImage">
+    <MudStack Row
+              AlignItems="AlignItems.Center"
+              Spacing="5"
+              Class="ma-1 pa-1">
 
-    <label for="textToRender">
-        I am tired of...
-    </label>
+        <MudText>
+            I am tired of...
+        </MudText>
 
-    <input id="textToRender"
-           type="text"
-           maxlength="30"
-           disabled="@IsWorking"
-           placeholder="Enter some text"
-           @bind="@TextToRender" />
+        <MudInput @bind-Value="@TextToRender"
+                  @ref="@TextInput"
+                  Variant="@Variant.Outlined"
+                  Margin="@Margin.Dense"
+                  Disabled="@IsWorking"
+                  Placeholder="Enter some text"
+                  MaxLength="30" />
 
-    <button type="submit"
-            class="btn btn-primary"
-            disabled="@IsWorking">
-        Generate
-    </button>
+        <MudButton ButtonType="@ButtonType.Submit"
+                   Variant="@Variant.Filled"
+                   Color="@Color.Primary"
+                   Disabled="@IsWorking">
+            Generate
+        </MudButton>
 
-    @if (IsWorking)
-    {
-        <span class="working-message">
-            <strong>
-                Working...
-            </strong>
-        </span>
-    }
-    else if (GenerationTime is { TotalSeconds: var totalSeconds })
-    {
-        <strong>
-            Image generated in @totalSeconds seconds.
-        </strong>
-    }
+        @if (IsWorking)
+        {
+            <MudText>
+                <strong>
+                    Working...
+                </strong>
+            </MudText>
+        }
+        else if (GenerationTime is { TotalSeconds: var totalSeconds })
+        {
+            <MudText>
+                Image generated in @totalSeconds seconds.
+            </MudText>
+        }
 
+    </MudStack>
 </form>
 
 <div>
@@ -69,11 +72,6 @@
     {
         <img src="assets/background.png"
              class="default-image"
-             alt="Doctor Manhattan sitting on a rock on Mars">
+             alt="@BaseAltText">
     }
 </div>
-
-<p>
-    Source code here: <a href="https://github.com/codemonkey85/TiredDoctorManhattan"
-                         target="_blank">https://github.com/codemonkey85/TiredDoctorManhattan</a>
-</p>

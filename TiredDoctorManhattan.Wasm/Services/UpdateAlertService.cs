@@ -2,11 +2,11 @@
 
 public class UpdateAlertService : IUpdateAlertService
 {
+    public UpdateAlertService() => Instance = this;
+
     public static UpdateAlertService? Instance { get; private set; }
 
     public event Action? OnUpdateAvailable;
-
-    public UpdateAlertService() => Instance = this;
 
     void IUpdateAlertService.ShowUpdateMessage() => ShowUpdateMessage();
 

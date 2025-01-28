@@ -2,6 +2,8 @@
 global using Microsoft.AspNetCore.Components.Web;
 global using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 global using Microsoft.JSInterop;
+global using MudBlazor;
+global using MudBlazor.Services;
 global using SixLabors.Fonts;
 global using SixLabors.ImageSharp;
 global using SixLabors.ImageSharp.Drawing;
@@ -14,3 +16,4 @@ global using System.Diagnostics.CodeAnalysis;
 global using TiredDoctorManhattan.Wasm;
 global using TiredDoctorManhattan.Wasm.Services;
 global using TiredDoctorManhattan.Wasm.Shared;
+global using ImageSharpColor = SixLabors.ImageSharp.Color;
