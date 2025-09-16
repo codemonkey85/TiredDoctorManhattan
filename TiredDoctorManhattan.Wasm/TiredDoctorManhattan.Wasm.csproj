@@ -19,20 +19,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.5" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.5" PrivateAssets="all" />
-        <PackageReference Include="MudBlazor" Version="8.6.0" />
-        <PackageReference Include="SixLabors.Fonts" Version="2.1.3" />
-        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.8" />
-        <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.6" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.9"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.9" PrivateAssets="all"/>
+        <PackageReference Include="MudBlazor" Version="8.12.0"/>
+        <PackageReference Include="SixLabors.Fonts" Version="2.1.3"/>
+        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11"/>
+        <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.7"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+        <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js"/>
     </ItemGroup>
 
     <Target Name="CopyServiceWorkerPublished" AfterTargets="Publish">
-        <Copy SourceFiles="wwwroot\service-worker.published.js" DestinationFiles="$(PublishDir)wwwroot\service-worker.published.js" />
+        <Copy SourceFiles="wwwroot\service-worker.published.js" DestinationFiles="$(PublishDir)wwwroot\service-worker.published.js"/>
     </Target>
 
     <ItemGroup>
