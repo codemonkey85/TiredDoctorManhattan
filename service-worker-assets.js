@@ -1,16 +1,16 @@
 self.assetsManifest = {
-  "version": "5RmfSQQ0",
+  "version": "AVnFGanK",
   "assets": [
     {
       "hash": "sha256-YM6V9CPjKgx3qjA1O9AJFMDOXpGIMLtk5kp8k9RzviY=",
       "url": "BrowserNotSupported.html"
     },
     {
-      "hash": "sha256-3FM/mjas9rQiq2CY+FQPy1Pe1iCLSx/qZltQxK4dcuQ=",
+      "hash": "sha256-TSgzDIY4qdWvjvfBaUSrnerVt2+FjH4cXGlPrxEz1C0=",
       "url": "_content/MudBlazor/MudBlazor.min.css"
     },
     {
-      "hash": "sha256-Qf9/gSPxTxchB08Wi5WXxjPqw2IQvnyVUW27s7cwoUo=",
+      "hash": "sha256-hylTyzoFC8Kp1f0FRqBY1LUV5GLhjEZGZbvrFnkZ1Tw=",
       "url": "_content/MudBlazor/MudBlazor.min.js"
     },
     {
@@ -82,8 +82,8 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.j32v81rh7j.wasm"
     },
     {
-      "hash": "sha256-Z1EleJDegd5NqOuqbtosPJZMJIWcsFEfi5lKgwad1lY=",
-      "url": "_framework/MudBlazor.jxvzxxa9wa.wasm"
+      "hash": "sha256-7ZFJ+YmFjThRRs2a8l+SDWkxmCwgnKlovkkD7UFaz+o=",
+      "url": "_framework/MudBlazor.1byl9u9mz4.wasm"
     },
     {
       "hash": "sha256-ktKGHjWybIoW7EjbWxa4Nv3t+nv+OqAG4oi4RqSBi9w=",
@@ -210,11 +210,11 @@ self.assetsManifest = {
       "url": "_framework/System.Threading.Tasks.Parallel.7lw50hmob4.wasm"
     },
     {
-      "hash": "sha256-cTWu7Q/H7hlW5XkEexuWCF3wG95hsnD6CofBq6DqoOY=",
-      "url": "_framework/TiredDoctorManhattan.Wasm.xg14lgalxl.wasm"
+      "hash": "sha256-4i1FoGOCdxbGvSOrCCyEGuMWnQN34w64i8x+gUm1duQ=",
+      "url": "_framework/TiredDoctorManhattan.Wasm.migym1xf9t.wasm"
     },
     {
-      "hash": "sha256-rPJ/yAHYN/7thirGK029hBAxcNPnSoXzu5M++9IFpi8=",
+      "hash": "sha256-z3XmoqxTmdXvXXbYDMKH5cJ5lZr+yNnuiXvuu9FTfq8=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -230,8 +230,8 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.pfl3kgawtp.js"
     },
     {
-      "hash": "sha256-fj27+09HCGzaclKTKhVPoi3ppfnyE6KvuxE/ksaoHO8=",
-      "url": "_framework/dotnet.native.qe7gdjiban.wasm"
+      "hash": "sha256-4HYz5tDlKdbZRgcYN0pSxcaqBDf2ng9VWG4MQJcstkU=",
+      "url": "_framework/dotnet.native.ww8sppvrac.wasm"
     },
     {
       "hash": "sha256-oBRKHAqZUsvCRnCzkQfB7zc45cpKLNq2NKyrG10IKx8=",

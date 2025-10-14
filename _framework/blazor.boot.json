@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "TiredDoctorManhattan.Wasm",
   "resources": {
-    "hash": "sha256-dNzey6zMPbptc6mxVf6227E6Yp2CW47rxcaGZlGV838=",
+    "hash": "sha256-9F/EwrlDDjOE3oohOL9cLqS1ISnFVDXOALnVeUjZyAs=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.g38wcth437.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Forms.xoiupgtbvi.wasm": "Microsoft.AspNetCore.Components.Forms.wasm",
@@ -20,7 +20,7 @@
       "Microsoft.Extensions.Primitives.xi3by8whww.wasm": "Microsoft.Extensions.Primitives.wasm",
       "Microsoft.JSInterop.j32v81rh7j.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.imfqvv3x5h.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
-      "MudBlazor.jxvzxxa9wa.wasm": "MudBlazor.wasm",
+      "MudBlazor.1byl9u9mz4.wasm": "MudBlazor.wasm",
       "SixLabors.Fonts.edvfmke4zp.wasm": "SixLabors.Fonts.wasm",
       "SixLabors.ImageSharp.nfd9cjts7z.wasm": "SixLabors.ImageSharp.wasm",
       "SixLabors.ImageSharp.Drawing.u0t47p7c6q.wasm": "SixLabors.ImageSharp.Drawing.wasm",
@@ -52,9 +52,9 @@
       "System.Threading.Tasks.Parallel.7lw50hmob4.wasm": "System.Threading.Tasks.Parallel.wasm",
       "System.Threading.92ez24v1xd.wasm": "System.Threading.wasm",
       "System.Private.CoreLib.m1mc9f7i4g.wasm": "System.Private.CoreLib.wasm",
-      "TiredDoctorManhattan.Wasm.xg14lgalxl.wasm": "TiredDoctorManhattan.Wasm.wasm",
+      "TiredDoctorManhattan.Wasm.migym1xf9t.wasm": "TiredDoctorManhattan.Wasm.wasm",
       "dotnet.native.pfl3kgawtp.js": "dotnet.native.js",
-      "dotnet.native.qe7gdjiban.wasm": "dotnet.native.wasm",
+      "dotnet.native.ww8sppvrac.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.runtime.st3wwc8rqy.js": "dotnet.runtime.js"
     },
@@ -65,7 +65,7 @@
       "dotnet.runtime.st3wwc8rqy.js": "sha256-oBRKHAqZUsvCRnCzkQfB7zc45cpKLNq2NKyrG10IKx8="
     },
     "wasmNative": {
-      "dotnet.native.qe7gdjiban.wasm": "sha256-fj27+09HCGzaclKTKhVPoi3ppfnyE6KvuxE/ksaoHO8="
+      "dotnet.native.ww8sppvrac.wasm": "sha256-4HYz5tDlKdbZRgcYN0pSxcaqBDf2ng9VWG4MQJcstkU="
     },
     "coreAssembly": {
       "Microsoft.AspNetCore.Components.g38wcth437.wasm": "sha256-/CDXd8Q+gN1U/4m4OYUvMR5Qp9laBA05O8sCLK1gdRk=",
@@ -85,7 +85,7 @@
       "Microsoft.Extensions.Primitives.xi3by8whww.wasm": "sha256-Z1cHjoZTv4qOxqiOGWShjROQvhsIFa5oQUpGRygQkAc=",
       "Microsoft.JSInterop.j32v81rh7j.wasm": "sha256-X7jJp00Tiv5772a0jVbwNx0mW77oVHL8WUnE7636GOk=",
       "Microsoft.JSInterop.WebAssembly.imfqvv3x5h.wasm": "sha256-mpyjzA6YBuV9Qx5BUC8YbXP9YjZlM+k7YTVawzXJFgk=",
-      "MudBlazor.jxvzxxa9wa.wasm": "sha256-Z1EleJDegd5NqOuqbtosPJZMJIWcsFEfi5lKgwad1lY=",
+      "MudBlazor.1byl9u9mz4.wasm": "sha256-7ZFJ+YmFjThRRs2a8l+SDWkxmCwgnKlovkkD7UFaz+o=",
       "SixLabors.Fonts.edvfmke4zp.wasm": "sha256-ktKGHjWybIoW7EjbWxa4Nv3t+nv+OqAG4oi4RqSBi9w=",
       "SixLabors.ImageSharp.nfd9cjts7z.wasm": "sha256-vcvkp827SvudIDIgZVCUP2VefJYlqIPOFTrHG4S9vtI=",
       "SixLabors.ImageSharp.Drawing.u0t47p7c6q.wasm": "sha256-Erms8znJ0+65xOr3D3c5f5OINuJW30fe/eJcCIyh2Gc=",
@@ -117,7 +117,7 @@
       "System.Threading.Tasks.Parallel.7lw50hmob4.wasm": "sha256-xYcaj9bUVLms5TiOAMcEsXVaFtn63LWVSqWZpY/GOEc=",
       "System.Threading.92ez24v1xd.wasm": "sha256-8TOdx+WTSrBAkPVcYh/dHgxZeRNAfj3bK1p4ESYA1bo=",
       "System.Private.CoreLib.m1mc9f7i4g.wasm": "sha256-ZtCiYEO9Ry6vdUOb4VpOGjkV113kvehn+eg8Cifj5wA=",
-      "TiredDoctorManhattan.Wasm.xg14lgalxl.wasm": "sha256-cTWu7Q/H7hlW5XkEexuWCF3wG95hsnD6CofBq6DqoOY="
+      "TiredDoctorManhattan.Wasm.migym1xf9t.wasm": "sha256-4i1FoGOCdxbGvSOrCCyEGuMWnQN34w64i8x+gUm1duQ="
     },
     "assembly": {}
   },
