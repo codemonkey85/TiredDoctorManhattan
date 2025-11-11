@@ -9,8 +9,12 @@ public static class TiredManhattanGenerator
         string text)
     {
         ArgumentNullException.ThrowIfNull(text);
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(text.Length, 0);
 
         var background = await Settings.GetBackground(backgroundStream);
+
+        // Yield to prevent blocking the UI thread
+        await Task.Yield();
 
         var textOptions = new RichTextOptions(Settings.GetFont(fontStream))
         {
@@ -44,6 +48,9 @@ public static class TiredManhattanGenerator
             blackBorder.Width + Settings.WhiteBorderThickness * 2,
             blackBorder.Height + Settings.WhiteBorderThickness * 2
         );
+
+        // Yield before the CPU-intensive image manipulation
+        await Task.Yield();
 
         background.Mutate(i =>
         {

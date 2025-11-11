@@ -53,14 +53,22 @@ public partial class Index : IDisposable
     {
         IsWorking = true;
         GenerationTime = null;
+
+        // Yield to allow UI to update with the "Working..." state
+        await Task.Yield();
+
         var stopwatch = Stopwatch.StartNew();
 
         try
         {
             var text = TiredManhattanGenerator.Clean(TextToRender);
 
-            await using var backgroundStream = await HttpClient.GetStreamAsync(BackgroundImageLocation);
-            await using var fontStream = await HttpClient.GetStreamAsync(FontLocation);
+            // Load streams into memory to make them seekable
+            var backgroundStreamData = await HttpClient.GetByteArrayAsync(BackgroundImageLocation);
+            var fontStreamData = await HttpClient.GetByteArrayAsync(FontLocation);
+            
+            await using var backgroundStream = new MemoryStream(backgroundStreamData);
+            await using var fontStream = new MemoryStream(fontStreamData);
 
             ImageBytes = await TiredManhattanGenerator.GenerateBytes(
                 backgroundStream, fontStream, text);
