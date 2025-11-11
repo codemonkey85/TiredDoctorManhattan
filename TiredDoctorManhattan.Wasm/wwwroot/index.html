@@ -29,6 +29,7 @@
     <link href="icon-192.png"
           rel="apple-touch-icon"
           sizes="192x192"/>
+    <script type="importmap"></script>
 </head>
 
 <body>
@@ -55,7 +56,7 @@
 </div>
 <!--prevent autostarting-->
 <script autostart="false"
-        src="_framework/blazor.webassembly.js"></script>
+        src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
 <script src="_content/MudBlazor/MudBlazor.min.js"></script>
 
 <script>
