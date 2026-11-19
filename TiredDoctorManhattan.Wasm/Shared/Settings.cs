@@ -13,7 +13,7 @@ public static class Settings
 
     public static float WhiteBorderThickness => 5;
 
-    public static ImageSharpColor ManhattanBlue { get; } = new(new Rgba32(1, 215, 253));
+    public static ImageSharpColor ManhattanBlue { get; } = ImageSharpColor.FromPixel(new Rgba32(1, 215, 253));
 
     public static Font GetFont(Stream fontStream)
     {

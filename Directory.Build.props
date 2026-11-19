@@ -1,0 +1,5 @@
+<Project>
+    <PropertyGroup>
+        <SixLaborsLicenseKey Condition="'$(SixLaborsLicenseKey)' == ''">$(SIXLABORS_LICENSE_KEY)</SixLaborsLicenseKey>
+    </PropertyGroup>
+</Project>

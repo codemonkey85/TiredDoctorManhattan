@@ -1,30 +1,61 @@
 name: Deploy to GitHub Pages
 
-# Run workflow on every push to the main branch
+# Validate pull requests and deploy pushes to main.
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
 
 jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v6.1.0
+        with:
+          global-json-file: global.json
+      - name: Install WASM workload
+        run: dotnet workload restore
+      - name: Build
+        run: dotnet build TiredDoctorManhattan.sln --configuration Debug --nologo
+      - name: Test
+        run: dotnet test TiredDoctorManhattan.sln --configuration Debug --no-build --nologo
+      - name: Validate AOT publish
+        if: github.event_name == 'pull_request'
+        env:
+          SIXLABORS_LICENSE_KEY: ${{ secrets.SIXLABORS_LICENSE_KEY }}
+        run: dotnet publish TiredDoctorManhattan.Wasm/TiredDoctorManhattan.Wasm.csproj -c Release -o release --no-restore --nologo
+      - name: Install browser test dependencies
+        if: github.event_name == 'pull_request'
+        run: |
+          npm ci --prefix tests/browser
+          npm exec --prefix tests/browser -- playwright install --with-deps chromium
+      - name: Test published AOT app in browser
+        if: github.event_name == 'pull_request'
+        run: node tests/browser/smoke.cjs release/wwwroot
+
   deploy-to-github-pages:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     # use ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
+    env:
+      SIXLABORS_LICENSE_KEY: ${{ secrets.SIXLABORS_LICENSE_KEY }}
     steps:
       # uses GitHub's checkout action to checkout code form the main branch
       - uses: actions/checkout@v7.0.1
 
       # sets up .NET SDK
       - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v6.0.0
+        uses: actions/setup-dotnet@v6.1.0
         with:
           global-json-file: global.json
 
       - name: Install WASM workload
         run: dotnet workload install wasm-tools
-
-      - name: Test
-        run: dotnet test
 
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project

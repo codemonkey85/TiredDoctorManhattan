@@ -196,6 +196,7 @@ publish/
 PublishScripts/
 
 # NuGet Packages
+sixlabors.lic
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg

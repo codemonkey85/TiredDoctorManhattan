@@ -28,21 +28,21 @@ public static class TiredManhattanGenerator
         var width = textRectangle.Width + Settings.TextPadding * 2;
         var height = textRectangle.Height + Settings.TextPadding * 2;
 
-        var container = new RectangularPolygon(
+        var container = new RectanglePolygon(
             Settings.TextBoxOrigin.X - Settings.TextPadding,
             Settings.TextBoxOrigin.Y - height / 2,
             width,
             height
         );
 
-        var blackBorder = new RectangularPolygon(
+        var blackBorder = new RectanglePolygon(
             container.X - Settings.BlackBorderThickness,
             container.Y - Settings.BlackBorderThickness,
             container.Width + Settings.BlackBorderThickness * 2,
             container.Height + Settings.BlackBorderThickness * 2
         );
 
-        var whiteBorder = new RectangularPolygon(
+        var whiteBorder = new RectanglePolygon(
             blackBorder.X - Settings.WhiteBorderThickness,
             blackBorder.Y - Settings.WhiteBorderThickness,
             blackBorder.Width + Settings.WhiteBorderThickness * 2,
@@ -54,10 +54,13 @@ public static class TiredManhattanGenerator
 
         background.Mutate(i =>
         {
-            i.Fill(ImageSharpColor.White, whiteBorder);
-            i.Fill(ImageSharpColor.Black, blackBorder);
-            i.Fill(Settings.ManhattanBlue, container);
-            i.DrawText(textOptions, text, ImageSharpColor.Black);
+            i.Paint(canvas =>
+            {
+                canvas.Fill(Brushes.Solid(ImageSharpColor.White), whiteBorder);
+                canvas.Fill(Brushes.Solid(ImageSharpColor.Black), blackBorder);
+                canvas.Fill(Brushes.Solid(Settings.ManhattanBlue), container);
+                canvas.DrawText(textOptions, text, Brushes.Solid(ImageSharpColor.Black), pen: null);
+            });
             // resize the image, it's kind of big right now
             i.Resize(background.Width / 2, background.Height / 2);
         });
@@ -72,7 +75,7 @@ public static class TiredManhattanGenerator
         string text)
     {
         using var ms = new MemoryStream();
-        var image = await Generate(backgroundStream, fontStream, text);
+        using var image = await Generate(backgroundStream, fontStream, text);
 
         await image.SaveAsync(ms, PngFormat.Instance);
         ms.Position = 0;
