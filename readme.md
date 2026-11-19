@@ -10,6 +10,59 @@ Check it out: https://codemonkey85.github.io/TiredDoctorManhattan/
 
 Original repo: https://github.com/khalidabuhakmeh/TiredDoctorManhattan
 
+## Build and test
+
+Install the .NET 11 SDK selected by `global.json`, then run:
+
+```sh
+dotnet workload restore
+dotnet build TiredDoctorManhattan.sln
+dotnet test TiredDoctorManhattan.sln --no-build
+dotnet run --project TiredDoctorManhattan.Wasm
+```
+
+The generator tests run on the host runtime using the production generator source,
+background image, and font. They check text normalization, PNG encoding, dimensions,
+rendered text, and borders after resizing. Pull requests run the Debug build and
+tests, plus a Release AOT publish and browser check using the configured license secret;
+pushes to `main` also publish the AOT app and deploy to GitHub Pages.
+
+The app retains AOT compilation, with `SixLabors.ImageSharp.Drawing` interpreted.
+Its generic rasterizer currently traps in Mono WebAssembly AOT at
+`DefaultRasterizer.Context.FlushBufferedRun<TRowHandler>`.
+The project uses the .NET SDK's internal assembly interpretation hook for this
+workaround; recheck it when upgrading the SDK or Drawing package. The browser test
+generates two distinct PNGs from the published output to catch runtime regressions.
+
+### Six Labors license for Release builds
+
+The upgraded Six Labors packages require a valid license for Release builds.
+Debug builds and tests can run without a key, with a licensing warning.
+See the [Six Labors licensing instructions](https://docs.sixlabors.com/articles/imagesharp/index.html)
+and [license application](https://licensing.sixlabors.com/).
+For an assembly-scoped community key, include `TiredDoctorManhattan.Wasm` and
+`TiredDoctorManhattan.Tests`.
+
+Set `SIXLABORS_LICENSE_KEY` to the complete issued license string locally and add
+the same value as the repository Actions secret `SIXLABORS_LICENSE_KEY` for deployment.
+`Directory.Build.props` passes the environment variable to the package's license validator.
+Alternatively, set the MSBuild property `SixLaborsLicenseFile` to a license file path.
+License files are ignored by Git; keep private keys out of source control.
+
+With a license configured, publish with:
+
+```sh
+dotnet publish TiredDoctorManhattan.Wasm/TiredDoctorManhattan.Wasm.csproj -c Release -o release --nologo
+```
+
+To test the published app in a browser (requires Node.js):
+
+```sh
+npm ci --prefix tests/browser
+npm exec --prefix tests/browser -- playwright install chromium
+node tests/browser/smoke.cjs release/wwwroot
+```
+
 ## License
 
 Copyright © 2022 khalidabuhakmeh
